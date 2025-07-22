@@ -1,0 +1,67 @@
+# Trading Agent Configuration - Coinbase Pro Sandbox
+
+# Exchange Settings
+exchange:
+  name: "coinbasepro"
+  testnet: true
+  api_key: "YOUR_COINBASE_API_KEY"
+  secret: "YOUR_COINBASE_SECRET_KEY"
+  sandbox: true
+  passphrase: "YOUR_COINBASE_PASSPHRASE"  # Coinbase Pro requires passphrase
+
+# Trading Parameters
+trading:
+  symbols: ["BTC-USD", "ETH-USD", "ADA-USD"]
+  base_currency: "USD"
+  position_size: 0.1  # 10% of available balance per trade
+  max_positions: 3
+  min_order_size: 10  # Minimum order size in USD
+
+# Strategy Configuration
+strategy:
+  name: "rsi_macd_hybrid"
+  parameters:
+    rsi_period: 14
+    rsi_overbought: 70
+    rsi_oversold: 30
+    macd_fast: 12
+    macd_slow: 26
+    macd_signal: 9
+    bollinger_period: 20
+    bollinger_std: 2
+
+# Risk Management
+risk:
+  max_drawdown: 0.15
+  stop_loss: 0.05
+  take_profit: 0.10
+  trailing_stop: true
+  max_daily_trades: 10
+  volatility_threshold: 0.02
+
+# Performance Tracking
+performance:
+  track_metrics: true
+  save_trades: true
+  log_level: "INFO"
+  metrics_interval: 60
+
+# Data Settings
+data:
+  timeframe: "1h"
+  lookback_period: 100
+  update_interval: 60
+
+# Gaia AI Configuration
+gaia:
+  enabled: true
+  api_key: "gaia-NmFjMzUwNjMtYjg1NS00ZDVjLWFjYjgtN2Y1YWJkNTgzZGE3-GiEWEBMm8JApV-Ue"
+  endpoint: "https://api.gaianet.ai/v1"
+  model: "trading-ai-v1"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "logs/trading_agent.log"
+  max_size: "10MB"
+  backup_count: 5 

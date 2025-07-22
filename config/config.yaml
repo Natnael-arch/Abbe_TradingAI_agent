@@ -1,0 +1,103 @@
+# Trading Agent Configuration
+
+# Exchange Settings
+exchange:
+  name: "binance"
+  testnet: true  # Use testnet for safe testing
+  api_key: "8ILawj12QiElys2NEgccvJ6t8HSAWOK25YFx8DdZCzXEhIVur9ekwKh8CQcVBBNF"
+  secret: "6d7Fl0tFCPMuXKMA8KHH2zVjNustgUzcjH38pfsGfLJ1Ucs1y7UwHA2JpzhYmbe9"
+  sandbox: true  # Use sandbox mode
+
+# Trading Parameters
+trading:
+  symbols: ["BTC/USDT"]
+  base_currency: "USDT"
+  position_size: 0.05  # 5% of available balance per trade (safer for 10 positions)
+  max_positions: 10  # Recommended for aggressive hackathon trading
+  min_order_size: 10  # Minimum order size in USDT
+
+# Strategy Configuration
+strategy:
+  name: "ensemble"
+  parameters:
+    strategies:
+      - name: "gaia_llm"
+      - name: "hybrid"
+    # Hybrid strategy tuning for more activity
+    hybrid_parameters:
+      rsi_period: 14
+      rsi_overbought: 75
+      rsi_oversold: 25
+      macd_fast: 12
+      macd_slow: 26
+      macd_signal: 9
+      bb_period: 20
+      bb_std: 2
+      volume_sma_period: 20
+      volume_threshold: 1.2
+      min_indicators_agree: 1
+      min_confidence: 0.3
+      max_confidence: 0.98
+    model: "Qwen3-235B-A22B-Q4_K_M"
+    prompt_template: |
+      You are a highly aggressive crypto trading AI competing in a one-day hackathon. Your goal is to maximize profit and leaderboard position.
+      - Only choose HOLD if there is truly no opportunity; otherwise, prefer BUY or SELL.
+      - If confidence is above 0.7, act decisively.
+      - Take calculated risks, especially near support/resistance or after strong moves.
+      - Use all available context to find high-probability trades.
+      Respond in the format: Action: <buy/sell/hold>\nConfidence: <0-1>\nReason: <short explanation>.
+      Market Data:\n{market_data}\n
+
+# Risk Management
+risk:
+  max_drawdown: 0.05  # Allow more drawdown for higher risk/reward
+  stop_loss: 0.03     # 3% stop loss (looser)
+  take_profit: 0.06   # 6% take profit (looser)
+  trailing_stop: true
+  max_daily_trades: 20  # Allow more trades per day
+  volatility_threshold: 0.015  # Slightly lower for more signals
+
+# Performance Tracking
+performance:
+  track_metrics: true
+  save_trades: true
+  log_level: "INFO"
+  metrics_interval: 60  # seconds
+
+# Data Settings
+data:
+  timeframe: "15m"  # 1m, 5m, 15m, 1h, 4h, 1d
+  lookback_period: 100
+  update_interval: 60  # seconds
+
+# Deployment Settings
+deployment:
+  mode: "local"  # local, gaia, docker
+  gaia_api_key: "gaia-NmFjMzUwNjMtYjg1NS00ZDVjLWFjYjgtN2Y1YWJkNTgzZGE3-GiEWEBMm8JApV-Ue"
+  gaia_endpoint: "https://api.gaia.network"  # Or your assigned endpoint
+  auto_restart: true
+  health_check_interval: 300  # seconds
+  
+# Competition Settings
+competition:
+  agent_id: "trading_ai_001"
+  competition_mode: true
+  fair_start: true
+  performance_reporting: true
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "logs/trading_agent.log"
+  max_size: "10MB"
+  backup_count: 5 
+
+# Recall Competition Configuration
+recall:
+  api_key: "04ea008d099d31f2_6ed4df333479c752" 
+
+# Gaia AI Configuration
+
+gaia:
+  api_key: "gaia-NmFjMzUwNjMtYjg1NS00ZDVjLWFjYjgtN2Y1YWJkNTgzZGE3-eag3Jj2VCQwwt0-C"
+  base_url: "https://qwen72b.gaia.domains/v1" 

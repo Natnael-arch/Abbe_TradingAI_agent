@@ -1,0 +1,74 @@
+# Trading Agent Configuration
+
+# Exchange Settings
+exchange:
+  name: "binance"
+  testnet: true  # Use testnet for development
+  api_key: "YOUR_API_KEY"
+  secret: "YOUR_SECRET_KEY"
+  sandbox: true  # Use sandbox mode for testing
+
+# Trading Parameters
+trading:
+  symbols: ["BTC/USDT", "ETH/USDT", "ADA/USDT"]
+  base_currency: "USDT"
+  position_size: 0.1  # 10% of available balance per trade
+  max_positions: 3
+  min_order_size: 10  # Minimum order size in USDT
+
+# Strategy Configuration
+strategy:
+  name: "rsi_macd_hybrid"  # Options: rsi, macd, rsi_macd_hybrid, ml_lstm
+  parameters:
+    rsi_period: 14
+    rsi_overbought: 70
+    rsi_oversold: 30
+    macd_fast: 12
+    macd_slow: 26
+    macd_signal: 9
+    bollinger_period: 20
+    bollinger_std: 2
+
+# Risk Management
+risk:
+  max_drawdown: 0.15  # 15% maximum drawdown
+  stop_loss: 0.05     # 5% stop loss
+  take_profit: 0.10   # 10% take profit
+  trailing_stop: true
+  max_daily_trades: 10
+  volatility_threshold: 0.02
+
+# Performance Tracking
+performance:
+  track_metrics: true
+  save_trades: true
+  log_level: "INFO"
+  metrics_interval: 60  # seconds
+
+# Data Settings
+data:
+  timeframe: "1h"  # 1m, 5m, 15m, 1h, 4h, 1d
+  lookback_period: 100
+  update_interval: 60  # seconds
+
+# Deployment Settings
+deployment:
+  mode: "local"  # local, gaia, docker
+  gaia_api_key: "gaia-NmFjMzUwNjMtYjg1NS00ZDVjLWFjYjgtN2Y1YWJkNTgzZGE3-GiEWEBMm8JApV-Ue"
+  gaia_endpoint: "https://api.gaia.network"  # Or your assigned endpoint
+  auto_restart: true
+  health_check_interval: 300  # seconds
+  
+# Competition Settings
+competition:
+  agent_id: "trading_ai_001"
+  competition_mode: true
+  fair_start: true
+  performance_reporting: true
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/trading_agent.log"
+  max_size: "10MB"
+  backup_count: 5 
