@@ -54,7 +54,7 @@ data:
 # Deployment Settings
 deployment:
   mode: "local"  # local, gaia, docker
-  gaia_api_key: "gaia-NmFjMzUwNjMtYjg1NS00ZDVjLWFjYjgtN2Y1YWJkNTgzZGE3-GiEWEBMm8JApV-Ue"
+  gaia_api_key: "YOUR_GAIA_API_KEY"
   gaia_endpoint: "https://api.gaia.network"  # Or your assigned endpoint
   auto_restart: true
   health_check_interval: 300  # seconds

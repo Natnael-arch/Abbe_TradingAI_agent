@@ -14,8 +14,8 @@ def test_binance_connection():
     try:
         # Create testnet exchange instance with your actual keys
         exchange = ccxt.binance({
-            'apiKey': '8ILawj12QiElys2NEgccvJ6t8HSAWOK25YFx8DdZCzXEhIVur9ekwKh8CQcVBBNF',
-            'secret': '6d7Fl0tFCPMuXKMA8KHH2zVjNustgUzcjH38pfsGfLJ1Ucs1y7UwHA2JpzhYmbe9',
+            'apiKey': 'YOUR_API_KEY',
+            'secret': 'YOUR_SECRET_KEY',
             'sandbox': True,
             'testnet': True,
             'enableRateLimit': True,

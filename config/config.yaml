@@ -4,8 +4,8 @@
 exchange:
   name: "binance"
   testnet: true  # Use testnet for safe testing
-  api_key: "8ILawj12QiElys2NEgccvJ6t8HSAWOK25YFx8DdZCzXEhIVur9ekwKh8CQcVBBNF"
-  secret: "6d7Fl0tFCPMuXKMA8KHH2zVjNustgUzcjH38pfsGfLJ1Ucs1y7UwHA2JpzhYmbe9"
+  api_key: "YOUR_API_KEY"
+  secret: "YOUR_SECRET_KEY"
   sandbox: true  # Use sandbox mode
 
 # Trading Parameters
@@ -73,7 +73,7 @@ data:
 # Deployment Settings
 deployment:
   mode: "local"  # local, gaia, docker
-  gaia_api_key: "gaia-NmFjMzUwNjMtYjg1NS00ZDVjLWFjYjgtN2Y1YWJkNTgzZGE3-GiEWEBMm8JApV-Ue"
+  gaia_api_key: "YOUR_GAIA_API_KEY"
   gaia_endpoint: "https://api.gaia.network"  # Or your assigned endpoint
   auto_restart: true
   health_check_interval: 300  # seconds
@@ -94,10 +94,10 @@ logging:
 
 # Recall Competition Configuration
 recall:
-  api_key: "04ea008d099d31f2_6ed4df333479c752" 
+  api_key: "YOUR_RECALL_API_KEY" 
 
 # Gaia AI Configuration
 
 gaia:
-  api_key: "gaia-NmFjMzUwNjMtYjg1NS00ZDVjLWFjYjgtN2Y1YWJkNTgzZGE3-eag3Jj2VCQwwt0-C"
+  api_key: "YOUR_GAIA_AI_API_KEY"
   base_url: "https://qwen72b.gaia.domains/v1" 

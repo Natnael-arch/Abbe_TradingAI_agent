@@ -55,7 +55,7 @@ data:
 # Gaia AI Configuration
 gaia:
   enabled: true
-  api_key: "gaia-NmFjMzUwNjMtYjg1NS00ZDVjLWFjYjgtN2Y1YWJkNTgzZGE3-GiEWEBMm8JApV-Ue"
+  api_key: "YOUR_GAIA_API_KEY"
   endpoint: "https://api.gaianet.ai/v1"
   model: "trading-ai-v1"
 
