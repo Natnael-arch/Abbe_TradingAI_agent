@@ -3,7 +3,7 @@ import StatusPanel from './StatusPanel'
 import ControlPanel from './ControlPanel'
 import ConfigSelector from './ConfigSelector'
 
-const API_BASE_URL = 'https://4681e08a7833.ngrok-free.app'
+const API_BASE_URL = 'https://0d70a4df28e3.ngrok-free.app'
 
 const TradingDashboard = () => {
   const [status, setStatus] = useState({
